@@ -1,5 +1,9 @@
 import math
-from django.contrib.sites.models import Site, get_current_site
+try:
+    from django.contrib.sites.models import Site, get_current_site
+except ImportError:
+    from django.contrib.sites.models import Site
+    from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.sitemaps import Sitemap
 from haystack.query import SearchQuerySet
 
